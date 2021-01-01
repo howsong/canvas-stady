@@ -1,2 +1,2 @@
 # canvas-stady
-knowlege about canvas
+knowledge about canvas
