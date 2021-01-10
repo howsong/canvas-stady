@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rectangular-矩形</title>
+    <style>
+      .canvas {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="600" class="canvas"></canvas>
+    <script src="../canvasCommand.js"></script>
+    <script>
+      var canvas = document.getElementById("canvas");
+      const cWithCommand = new HsCanvasCommand(canvas);
+      cWithCommand.drawByCommands([
+        ["fillStyle", "#000"],
+        ["strokeStyle", "#f60"],
+        ["lineWidth", "5"],
+        ["fillRect", [0, 0, 400, 300]],
+        ["strokeRect", [50, 50, 180, 120]],
+        ["strokeRect", [110, 110, 180, 120]]
+      ]);
+    </script>
+  </body>
+</html>

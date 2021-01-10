@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>circular-圆形</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .canvas {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1200" height="800" class="canvas"></canvas>
+    <script src="../canvasCommand.js"></script>
+    <script>
+      var canvas = document.getElementById("canvas");
+      const cWithCommand = new HsCanvasCommand(canvas);
+      cWithCommand.drawByCommands([
+        ["beginPath", []],
+        ["arc", [100, 100, 50, 0, 2 * Math.PI, false]],
+        ["stroke", []],
+
+        ["beginPath", []],
+        ["arc", [100, 200, 50, 0, 1.5 * Math.PI, false]],
+        ["stroke", []],
+
+        ["beginPath", []],
+        ["arc", [100, 300, 50, 0, 1.5 * Math.PI, true]],
+        ["stroke", []]
+      ]);
+    </script>
+  </body>
+</html>

@@ -1,23 +1,18 @@
-class hsCanvasApi {
-  constructor(configs) {
-    this.context = null
-    this.canvas = null
-    this.init(configs)
+class HsCanvasCommand {
+  constructor(canvasEl) {
+    this.canvasEl = canvasEl;
+    this.context = canvasEl.getContext("2d");
+    // 属性类指令
+    this.properties = ["fillStyle", "strokeStyle", "lineWidth"]
   }
-  init (configs) {
-    const canvas = document.createElement('canvas')
-    canvas.style.cssText = configs.cssText
-    document.body.appendChild(canvas)
-    this.canvas = canvas
-    this.context = canvas.getContext('2d')
-  }
-  drawByCommands (comands) {
-    comands.forEach(() => {
-      
-    })
-  }
-  rect (args) {
-    this.context.rect(...args)
-    return this
+  drawByCommands (commands) {
+    commands.forEach((item) => {
+      const name = item[0];
+      if (this.properties.includes(name)) {
+        this.context[name] = item[1];
+      } else {
+        this.context[name](...item[1]);
+      }
+    });
   }
 }

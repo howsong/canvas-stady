@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ellipse-椭圆</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .canvas {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1200" height="800" class="canvas"></canvas>
+    <script src="../canvasCommand.js"></script>
+    <script>
+      var canvas = document.getElementById("canvas");
+      const cWithCommand = new HsCanvasCommand(canvas);
+      cWithCommand.drawByCommands([
+        ["ellipse", [300, 300, 200, 100, 0, 0, Math.PI * 2]],
+        ["fillStyle", "blue"],
+        ["strokeStyle", "#000"],
+        ["fill", []],
+        ["stroke", []]
+      ]);
+
+    </script>
+  </body>
+</html>
