@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>triangle-三角形</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .canvas {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1200" height="800" class="canvas"></canvas>
+    <script src="../canvasCommand.js"></script>
+    <script>
+      var canvas = document.getElementById("canvas");
+      const cWithCommand = new HsCanvasCommand(canvas);
+      cWithCommand.triangle({
+        one:[100,100],
+        second:[300,300],
+        third:[100,300],
+        lineWidth:1
+      })
+    </script>
+  </body>
+</html>

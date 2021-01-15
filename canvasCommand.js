@@ -11,8 +11,24 @@ class HsCanvasCommand {
       if (this.properties.includes(name)) {
         this.context[name] = item[1];
       } else {
-        this.context[name](...item[1]);
+        const args = item[1] || []
+        this.context[name](...args);
       }
     });
+  }
+  // 绘制三角形
+  triangle (options) {
+    const commands = [
+      ['moveTo', options.one],
+      ['lineTo', options.second],
+      ['lineTo', options.third],
+      ['lineTo', options.one],
+      ['fillStyle', options.fillColor || 'red'],
+      ['fill', []],
+      ['lineWidth', [options.lineWidth]],
+      ['strokeStyle', ['#005588']],
+      ['stroke', []]
+    ]
+    this.drawByCommands(commands)
   }
 }

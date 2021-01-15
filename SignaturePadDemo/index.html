@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <style>
+      .canvas{
+        background-color: lightgoldenrodyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" class="canvas" width="600" height="300" ></canvas>
+    <script>
+      var canvas = document.getElementById('canvas')
+      var signaturePad = new SignaturePad(canvas, {
+        minWidth: 5,
+        maxWidth: 10,
+        penColor: "rgb(66, 133, 244)"
+      });
+      //或者在初始化之后
+      var signaturePad = new SignaturePad(canvas);
+      signaturePad.minWidth = 5;
+      signaturePad.maxWidth = 10;
+      signaturePad.penColor = "rgb(66, 133, 244)";
+    </script>
+  </body>
+</html>
